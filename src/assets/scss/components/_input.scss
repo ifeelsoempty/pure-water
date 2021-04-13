@@ -1,0 +1,47 @@
+.input {
+  input {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid $gray;
+    padding: 15px 0;
+    color: $font-color-2;
+    &:focus{
+      outline: 0;
+    }
+    &::placeholder{
+      color: $gray;
+      user-select: none;
+    }
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  &__btn {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    margin-right: 15px;
+    &:before{
+      content: '';
+      border-radius: 3px;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background: transparent;
+      border: 1px solid $gray;
+    }
+  }
+  & input {
+    display: none;
+  }
+  & input:checked + &__btn:before{
+    background: url('../../img/icons/icon-checkbox.svg') no-repeat center $primary-color;
+    border: none;
+    width: 20px !important;
+    height: 20px !important;
+  }
+}

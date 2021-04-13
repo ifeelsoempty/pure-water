@@ -1,0 +1,27 @@
+@import 'normalize';
+@import 'vars';
+@import 'fonts';
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Cera Pro', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $bg-color-1;
+  color: $font-color-2;
+};
+
+.link{
+  text-decoration: none;
+  color: $primary-color;
+}
+
+.separate{
+  width: 100%;
+  border-bottom: 1px dashed $gray;
+  margin: 40px 0;
+}
+
+@import 'components/input';
+@import 'components/order';

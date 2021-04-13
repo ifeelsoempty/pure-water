@@ -1,0 +1,52 @@
+.order{
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: space-between;
+  &-preview{
+    max-width: 260px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    &__title{
+      font-size: 30px;
+      margin: 25px 0 0 0;
+    }
+    &__desc{
+      color: $font-color-1;
+      line-height: 25px;
+      margin-top: 40px;
+    }
+  }
+  &-form{
+    height: 750px;
+    width: 900px;
+    padding: 40px;
+    background: $bg-color-2;
+    border-radius: 8px;
+  }
+  &-customer-form{
+    & .input {
+      min-width: 34%;
+      flex: 1;
+      padding-left: 100px;
+      padding-top: 15px;
+    }
+    &__inputs{
+      margin-top: 25px;
+      margin-left: -100px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__title{
+      font-size: 30px;
+      font-weight: 600;
+    }
+    &__policy{
+      margin-top: 40px;
+    }
+  }
+}
