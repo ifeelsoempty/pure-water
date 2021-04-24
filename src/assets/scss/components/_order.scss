@@ -1,8 +1,7 @@
 .order{
   max-width: 1400px;
-  margin: 0 auto;
   display: flex;
-  margin-top: 50px;
+  margin: 50px auto;
   align-items: center;
   justify-content: space-between;
   &-preview{
@@ -29,6 +28,7 @@
     border-radius: 8px;
   }
   &-customer-form{
+    margin-bottom: $order-vertical-margin;
     & .input {
       min-width: 34%;
       flex: 1;
@@ -47,6 +47,26 @@
     }
     &__policy{
       margin-top: 40px;
+    }
+  }
+  &-total{
+    margin: $order-vertical-margin 0;
+    font-size: 25px;
+    &-price{
+      font-weight: 500;
+      &__float{
+        color: $gray-dark-1;
+      }
+    }
+    &__top{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__title{
+      font-weight: bold;
+    }
+    &__hr{
+      margin-top: 15px;
     }
   }
 }

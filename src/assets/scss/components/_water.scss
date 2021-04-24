@@ -1,0 +1,118 @@
+.water{
+  margin: $order-vertical-margin 0;
+  &__title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  &__list{
+    margin-left: -12px;
+    margin-top: 12px;
+    display: flex;
+  }
+  &-item{
+    $this: &;
+    position: relative;
+    margin-bottom: 20px;
+    &__card{
+      position: relative;
+      cursor: pointer;
+      width: 130px;
+      height: 180px;
+      overflow: hidden;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+      user-select: none;
+      border-radius: 8px;
+      margin: 12px;
+      background: url('/assets/img/water.svg') bottom no-repeat;
+      background-size: 100%;
+    }
+    &__size{
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 25px;
+      font-weight: 500;
+    }
+    &__price{
+      position: absolute;
+      bottom: 20px;
+      left: 15px;
+      color: $white;
+      font-weight: 500;
+    }
+    &__image{
+      position:absolute;
+      right: 0;
+      bottom: 0;
+      width: 60px;
+      display: flex;
+      & img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    &__toggle{
+      position:absolute;
+      top: 10px;
+      right: 10px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      transition: background-color .25s;
+      background-color: $gray;
+    }
+    &__counter{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: -20px;
+      left: 0;
+      right: 0;
+      &--hidden{
+        transform: rotateX(-90deg);
+        opacity: 0;
+        z-index: -1;
+        transition: transform .25s, opacity .25s, z-index 0s .25s;
+      }
+      &--visible{
+        transform: rotateX(0);
+        opacity: 1;
+        z-index: 1;
+        transition: transform .25s, opacity .25s, z-index 0s;
+      }
+    }
+    &__amount{
+      width: 35px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    &__arrow{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: $secondary-color;
+      transition: .25s background-color;
+      &--plus{
+        background-image: url('/assets/img/icons/i-plus.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &--minus{
+        background-image: url('/assets/img/icons/i-minus.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &:hover{
+        background-color: lighten($secondary-color, 10%);
+      }
+    }
+    &--active{
+      #{$this}__toggle{
+        background: $secondary-color;
+      }
+    }
+  }
+}

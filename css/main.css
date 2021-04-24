@@ -5,7 +5,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url(c:\Projects\pure-water\src\assets\fonts\Cera-Pro\main.css);
 html {
   line-height: 1.15;
@@ -344,7 +343,7 @@ template {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Cera Pro', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Cera Pro', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #E9EFFC;
@@ -359,7 +358,10 @@ body {
 .separate {
   width: 100%;
   border-bottom: 1px dashed #D5DDE0;
-  margin: 40px 0;
+}
+
+.separate--solid {
+  border-bottom: 1px solid #D5DDE0;
 }
 
 .input input {
@@ -401,13 +403,35 @@ body {
           user-select: none;
 }
 
+.input--invalid input {
+  border-bottom: 1px solid #E0301E;
+}
+
+.input--invalid input::-webkit-input-placeholder {
+  color: #E0301E;
+}
+
+.input--invalid input:-ms-input-placeholder {
+  color: #E0301E;
+}
+
+.input--invalid input::-ms-input-placeholder {
+  color: #E0301E;
+}
+
+.input--invalid input::placeholder {
+  color: #E0301E;
+}
+
 .checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
 
 .checkbox__btn {
@@ -435,7 +459,7 @@ body {
 }
 
 .checkbox input:checked + .checkbox__btn:before {
-  background: url("../../img/icons/icon-checkbox.svg") no-repeat center #418DE8;
+  background: url("/assets/img/icons/i-check.svg") no-repeat center #418DE8;
   border: none;
   width: 20px !important;
   height: 20px !important;
@@ -443,11 +467,10 @@ body {
 
 .order {
   max-width: 1400px;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 50px;
+  margin: 50px auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -490,6 +513,10 @@ body {
   border-radius: 8px;
 }
 
+.order-customer-form {
+  margin-bottom: 30px;
+}
+
 .order-customer-form .input {
   min-width: 34%;
   -webkit-box-flex: 1;
@@ -516,5 +543,193 @@ body {
 
 .order-customer-form__policy {
   margin-top: 40px;
+}
+
+.order-total {
+  margin: 30px 0;
+  font-size: 25px;
+}
+
+.order-total-price {
+  font-weight: 500;
+}
+
+.order-total-price__float {
+  color: #BABDC2;
+}
+
+.order-total__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.order-total__title {
+  font-weight: bold;
+}
+
+.order-total__hr {
+  margin-top: 15px;
+}
+
+.water {
+  margin: 30px 0;
+}
+
+.water__title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.water__list {
+  margin-left: -12px;
+  margin-top: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.water-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.water-item__card {
+  position: relative;
+  cursor: pointer;
+  width: 130px;
+  height: 180px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 8px;
+  margin: 12px;
+  background: url("/assets/img/water.svg") bottom no-repeat;
+  background-size: 100%;
+}
+
+.water-item__size {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.water-item__price {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.water-item__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.water-item__image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.water-item__toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  -webkit-transition: background-color .25s;
+  transition: background-color .25s;
+  background-color: #D5DDE0;
+}
+
+.water-item__counter {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+}
+
+.water-item__counter--hidden {
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity .25s, z-index 0s .25s, -webkit-transform .25s;
+  transition: opacity .25s, z-index 0s .25s, -webkit-transform .25s;
+  transition: transform .25s, opacity .25s, z-index 0s .25s;
+  transition: transform .25s, opacity .25s, z-index 0s .25s, -webkit-transform .25s;
+}
+
+.water-item__counter--visible {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+  -webkit-transition: opacity .25s, z-index 0s, -webkit-transform .25s;
+  transition: opacity .25s, z-index 0s, -webkit-transform .25s;
+  transition: transform .25s, opacity .25s, z-index 0s;
+  transition: transform .25s, opacity .25s, z-index 0s, -webkit-transform .25s;
+}
+
+.water-item__amount {
+  width: 35px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.water-item__arrow {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #FFC369;
+  -webkit-transition: .25s background-color;
+  transition: .25s background-color;
+}
+
+.water-item__arrow--plus {
+  background-image: url("/assets/img/icons/i-plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.water-item__arrow--minus {
+  background-image: url("/assets/img/icons/i-minus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.water-item__arrow:hover {
+  background-color: #ffd79c;
+}
+
+.water-item--active .water-item__toggle {
+  background: #FFC369;
 }
 /*# sourceMappingURL=main.css.map */

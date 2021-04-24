@@ -1,10 +1,8 @@
-import preview from '../../assets/img/order-preview.png'
-
-export const OrderPreview = () => {
+export const Preview = () => {
   return (
     <div className="order-preview">
       <div className="order-preview__img">
-        <img src={preview} alt=""/>
+        <img src='/img/order-preview.png' alt=""/>
       </div>
       <h1 className="order-preview__title">Чистая Вода</h1>
       <div className="order-preview__desc">

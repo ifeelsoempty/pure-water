@@ -1,4 +1,4 @@
-export const OrderCustomerFormInputs = [
+export const CustomerFormInputs = [
   {
     name: 'name',
     required: true,

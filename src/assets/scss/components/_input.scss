@@ -14,11 +14,20 @@
       user-select: none;
     }
   }
+  &--invalid{
+    input{
+      border-bottom: 1px solid $red;
+      &::placeholder {
+        color: $red;
+      }
+    }
+  }
 }
 
 .checkbox {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
+  user-select: none;
+  cursor: pointer;
   &__btn {
     position: relative;
     display: flex;
@@ -39,7 +48,7 @@
     display: none;
   }
   & input:checked + &__btn:before{
-    background: url('../../img/icons/icon-checkbox.svg') no-repeat center $primary-color;
+    background: url('/assets/img/icons/i-check.svg') no-repeat center $primary-color;
     border: none;
     width: 20px !important;
     height: 20px !important;

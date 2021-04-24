@@ -3,7 +3,7 @@
 @import 'fonts';
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Cera Pro', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Cera Pro', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,10 +18,14 @@ body {
 }
 
 .separate{
+  $this: &;
   width: 100%;
   border-bottom: 1px dashed $gray;
-  margin: 40px 0;
+  &--solid{
+    border-bottom: 1px solid $gray;
+  }
 }
 
 @import 'components/input';
 @import 'components/order';
+@import 'components/water';

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import { OrderCustomerFormInputs } from './OrderCustomerFormInputs'
-import { Input } from '../../components/Input'
-import { CheckBox } from '../../components/CheckBox'
+import { CustomerFormInputs } from './CustomerFormInputs'
+import { Input } from '../../components/ui/Input'
+import { CheckBox } from '../../components/ui/CheckBox'
 
-export const OrderCustomerForm = () => {
+export const CustomerForm = () => {
   const [formData, setFormData] = useState({});
   const [agreement, setAgreement] = useState(false);
 
@@ -19,14 +19,14 @@ export const OrderCustomerForm = () => {
       <div className="order-customer-form__title">Заполните данные</div>
       <div className="order-customer-form__inputs">
         {
-          OrderCustomerFormInputs.map(inputObj => {
-            return <Input inputData={inputObj} onChange={(name, value) => changeData(name, value)}/>
+          CustomerFormInputs.map((inputObj, index) => {
+            return <Input key={index} inputData={inputObj} onChange={(name, value) => changeData(name, value)}/>
           })
         }
       </div> 
       <div className="order-customer-form__policy">
         <CheckBox checked={agreement} onChange={setAgreement} inputData={{name: 'policy'}}>
-          Я согласен на <a href="#" class="link">обработку персональных данных</a>
+          Я согласен на <a className="link" href="#">обработку персональных данных</a>
         </CheckBox>
       </div>
     </div>
