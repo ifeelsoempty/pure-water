@@ -1,7 +1,7 @@
 .order{
   max-width: 1400px;
   display: flex;
-  margin: 50px auto;
+  margin: 30px auto;
   align-items: center;
   justify-content: space-between;
   &-preview{
@@ -21,7 +21,6 @@
     }
   }
   &-form{
-    height: 750px;
     width: 900px;
     padding: 40px;
     background: $bg-color-2;
@@ -32,12 +31,12 @@
     & .input {
       min-width: 34%;
       flex: 1;
-      padding-left: 100px;
+      padding-left: 80px;
       padding-top: 15px;
     }
     &__inputs{
       margin-top: 25px;
-      margin-left: -100px;
+      margin-left: -80px;
       display: flex;
       flex-wrap: wrap;
     }
@@ -67,6 +66,17 @@
     }
     &__hr{
       margin-top: 15px;
+    }
+  }
+  &-row{
+    display: flex;
+  }
+  &-col{
+    display: flex;
+    width: calc(50% - 40px);
+    margin-left: 80px;
+    &:first-child{
+      margin-left: 0;
     }
   }
 }

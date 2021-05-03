@@ -1,50 +1,53 @@
 .water{
+  width: 100%;
   margin: $order-vertical-margin 0;
   &__title{
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
+    margin-bottom: 20px;
   }
   &__list{
-    margin-left: -12px;
-    margin-top: 12px;
     display: flex;
+    margin: 0 -12px;
+    margin-top: -12px;
   }
   &-item{
     $this: &;
     position: relative;
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
     &__card{
       position: relative;
       cursor: pointer;
       width: 130px;
-      height: 180px;
+      height: 160px;
       overflow: hidden;
-      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
       user-select: none;
-      border-radius: 8px;
+      border-radius: 10px;
       margin: 12px;
-      background: url('/assets/img/water.svg') bottom no-repeat;
+      background: url('/assets/img/water.svg') 100% 110% no-repeat $white;
       background-size: 100%;
     }
     &__size{
       position: absolute;
       top: 15px;
       left: 15px;
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 500;
     }
     &__price{
       position: absolute;
-      bottom: 20px;
+      bottom: 15px;
       left: 15px;
       color: $white;
-      font-weight: 500;
     }
     &__image{
       position:absolute;
       right: 0;
       bottom: 0;
-      width: 60px;
+      width: 50px;
       display: flex;
       & img {
         max-width: 100%;
@@ -53,10 +56,10 @@
     }
     &__toggle{
       position:absolute;
-      top: 10px;
-      right: 10px;
-      width: 13px;
-      height: 13px;
+      top: 13px;
+      right: 13px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       transition: background-color .25s;
       background-color: $gray;

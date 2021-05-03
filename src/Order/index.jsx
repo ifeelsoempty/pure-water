@@ -1,8 +1,11 @@
-import { useState, useEffect, useCountUp } from 'react'
+import { useState } from 'react'
+
+import AnimatedNumber from 'react-animated-number';
+
 import { CustomerForm } from './CustomerForm'
 import { Preview } from './Preview'
 import { Water } from './Water'
-import AnimatedNumber from 'react-animated-number';
+import { DatePicker } from './DatePicker'
 
 export const Order = () => {
   const [price, setPrice] = useState(0);
@@ -20,7 +23,14 @@ export const Order = () => {
   }
 
   const getAnimatedNumber = (val) => {
-    return <>{Math.trunc(val)}.<span className="order-total-price__float">{val.toFixed(2).split('.')[1]} ₽</span></>
+    return (
+      <>
+        {`${Math.trunc(val)}.`}
+        <span className="order-total-price__float">
+          {`${val.toFixed(2).split('.')[1]} ₽`}
+        </span>
+      </>
+    )
   }
 
   return (
@@ -29,7 +39,17 @@ export const Order = () => {
       <div className="order-form">
         <CustomerForm />
         <div className="separate"></div>
-        <Water onChange={onWaterChange}/>
+        <div className="order-row">
+          <div className="order-col">
+            <Water onChange={onWaterChange}/>
+          </div>
+          <div className="order-col">
+            <DatePicker 
+              onChangeInterval={(val) => console.log(val)}
+              onChangeDate={(val) => console.log(val)}
+            />
+          </div>
+        </div>
         <div className="separate"></div>
         <div className="order-total">
           <div className="order-total__top">
@@ -40,7 +60,7 @@ export const Order = () => {
               className="order-total-price" 
               component="div" 
               value={price} 
-              duration={500} 
+              duration={300} 
               formatValue={getAnimatedNumber}
             />
           </div>

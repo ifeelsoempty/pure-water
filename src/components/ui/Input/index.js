@@ -5,7 +5,7 @@ export const Input = (props) => {
   const [isValid, setIsValid] = useState(true);
 
   const onBlur = (e) => {
-    if(props.inputData.required && value == false){
+    if(props.inputData.required && !value){
       setIsValid(false);
     } else {
       setIsValid(true);

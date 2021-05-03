@@ -26,7 +26,7 @@ export const CustomerForm = () => {
       </div> 
       <div className="order-customer-form__policy">
         <CheckBox checked={agreement} onChange={setAgreement} inputData={{name: 'policy'}}>
-          Я согласен на <a className="link" href="#">обработку персональных данных</a>
+          Я согласен на <a className="link" target="blank" href="http://kremlin.ru/acts/bank/24154" rel="noreferrer">обработку персональных данных</a>
         </CheckBox>
       </div>
     </div>

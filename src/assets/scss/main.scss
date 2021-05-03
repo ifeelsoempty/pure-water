@@ -26,6 +26,12 @@ body {
   }
 }
 
+// Set default slider width
+.swiper-container{
+  width: 100%;
+}
+
 @import 'components/input';
 @import 'components/order';
 @import 'components/water';
+@import 'components/date-picker';

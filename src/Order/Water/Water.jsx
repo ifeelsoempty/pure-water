@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { WaterItemsData } from './WaterItemsData'
 import { WaterItem } from './WaterItem'
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
+
 export const Water = (props) => {
   const [items, setItems] = useState(WaterItemsData);
 
@@ -17,9 +20,15 @@ export const Water = (props) => {
     <div className="water">
       <div className="water__title">Вода</div>
       <div className="water__list">
-        {WaterItemsData.map(item => {
-          return <WaterItem onChange={onItemChange} item={item} key={item.id} />
-        })}
+        <Swiper slidesPerView={3}>
+          {WaterItemsData.map(item => {
+            return (
+              <SwiperSlide key={item.id}>
+                <WaterItem onChange={onItemChange} item={item} />
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
       </div>
     </div>
   )

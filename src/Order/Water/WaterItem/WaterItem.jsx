@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
-
 export const WaterItem = (props) => {
   const { item } = props;
 
-  const onClick = () => {
+  const onClick = (e) => {
     if(!item.isActive) item.count = 1;
     item.isActive = !item.isActive
     props.onChange(item);

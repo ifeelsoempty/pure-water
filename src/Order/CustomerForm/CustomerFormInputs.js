@@ -2,15 +2,15 @@ export const CustomerFormInputs = [
   {
     name: 'name',
     required: true,
-    placeholder: 'ФИО',
+    placeholder: 'Имя',
   },
   {
-    name: 'email',
+    name: 'phone',
     placeholder: 'Телефон',
     required: true
   },
   {
-    name: 'phone',
+    name: 'email',
     placeholder: 'Email',
     required: true
   },
