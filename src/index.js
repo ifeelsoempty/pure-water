@@ -4,8 +4,6 @@ import './assets/scss/main.scss';
 import { Order } from './Order';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Order />
-  </React.StrictMode>,
+  <Order />,
   document.getElementById('root')
 );

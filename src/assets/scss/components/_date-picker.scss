@@ -1,11 +1,4 @@
 .date-picker{
-  width: 100%;
-  margin: $order-vertical-margin 0;
-  &__title{
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
   &__subtitle{
     color: $gray-dark-1;
     font-size: 13px;
@@ -14,8 +7,7 @@
   }
   &__slider{
     display: flex;
-    margin: 15px 0;
-    margin-left: -7.5px;
+    margin: 15px -7.5px;
   }
   &__button{
     display: flex;

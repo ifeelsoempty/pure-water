@@ -1,7 +1,7 @@
 export const CheckBox = (props) => {
   return (
-    <label className="checkbox">
-      <input type="checkbox" checked={props.checked} onChange={(e) => props.onChange(e.target.checked)} name={props.inputData.name}/>
+    <label className={`checkbox ${props.error ? 'checkbox--invalid' : ''}`}>
+      <input type="checkbox" checked={props.checked} onChange={props.onChange} name={props.name}/>
       <div className="checkbox__btn"></div>
       <span>{ props.children }</span>
     </label>

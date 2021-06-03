@@ -1,11 +1,12 @@
 .order{
   max-width: 1400px;
   display: flex;
-  margin: 30px auto;
-  align-items: center;
+  margin: 0 auto;
   justify-content: space-between;
+  align-items: flex-start;
   &-preview{
     max-width: 260px;
+    margin-top: 285px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -21,13 +22,42 @@
     }
   }
   &-form{
-    width: 900px;
-    padding: 40px;
+    width: 980px;
+    margin: 60px 0;
+    &__container{
+      margin: 40px;
+    }
     background: $bg-color-2;
     border-radius: 8px;
+    &-title{
+      $this: &;
+      display: flex;
+      align-items: center;
+      &__label{
+        font-size: 30px;
+        font-weight: 600;
+      }
+      &__img{
+        margin-right: 15px;
+        display: none;
+      }
+      &--success{
+        #{$this}__img{
+          display: block;
+        }
+      }
+    }
+    &__label{
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    &__success{
+      margin-top: 40px;
+    }
   }
   &-customer-form{
     margin-bottom: $order-vertical-margin;
+    margin-top: 25px;
     & .input {
       min-width: 34%;
       flex: 1;
@@ -35,14 +65,10 @@
       padding-top: 15px;
     }
     &__inputs{
-      margin-top: 25px;
+      margin-top: -15px;
       margin-left: -80px;
       display: flex;
       flex-wrap: wrap;
-    }
-    &__title{
-      font-size: 30px;
-      font-weight: 600;
     }
     &__policy{
       margin-top: 40px;
@@ -70,13 +96,77 @@
   }
   &-row{
     display: flex;
+    width: 100%;
+    max-width: 100%;
+    &__separate{
+      display: none;
+    }
   }
   &-col{
     display: flex;
+    flex-direction: column;
+    margin: $order-vertical-margin 0;
     width: calc(50% - 40px);
     margin-left: 80px;
     &:first-child{
       margin-left: 0;
+    }
+    &__title{
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (max-width: 1450px) {
+    flex-direction: column;
+    &-preview{
+      display: none;
+    }
+    &-form{
+      margin: 0 auto;
+      margin-top: 60px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    margin: 0 20px;
+    &-form{
+      width: 100%;
+      margin: 20px 0;
+    }
+    &-row{
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__separate{
+        display: block;
+      }
+    }
+    &-col{
+      width: 100%;
+      margin-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    &-customer-form{
+      &__inputs{
+        flex-direction: column;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+    &-form{
+      margin: 0;
+      background: transparent;
+      &__container{
+        margin: 40px 30px;
+        background: transparent
+      }
     }
   }
 }

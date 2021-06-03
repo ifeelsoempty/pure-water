@@ -1,10 +1,12 @@
 .input {
+  position: relative;
   input {
     width: 100%;
     border: 0;
     background: transparent;
     border-bottom: 1px solid $gray;
     padding: 15px 0;
+    padding-top: 20px;
     color: $font-color-2;
     &:focus{
       outline: 0;
@@ -17,14 +19,19 @@
   &--invalid{
     input{
       border-bottom: 1px solid $red;
-      &::placeholder {
-        color: $red;
-      }
     }
+  }
+  &-error{
+    position: absolute;
+    top: 13px;
+    font-weight: 500;
+    color: $red;
+    font-size: 13px;
   }
 }
 
 .checkbox {
+  $this: &;
   display: inline-flex;
   user-select: none;
   cursor: pointer;
@@ -53,5 +60,14 @@
     border: none;
     width: 20px !important;
     height: 20px !important;
+  }
+  &--invalid{
+    #{$this}__btn {
+      &:before{
+        border: 2px solid $red;
+        width: 16px;
+        height: 16px;
+      }
+    }
   }
 }

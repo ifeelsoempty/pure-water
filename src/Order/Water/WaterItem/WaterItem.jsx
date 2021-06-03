@@ -1,17 +1,15 @@
-export const WaterItem = (props) => {
-  const { item } = props;
-
+export const WaterItem = ({ item, onChange}) => {
   const onClick = (e) => {
     if(!item.isActive) item.count = 1;
     item.isActive = !item.isActive
-    props.onChange(item);
+    onChange(item);
   }
 
   const changeCounter = (val) => {
     if(val > 0 && val < 100){
       item.count = val;
       if(item.isActive){
-        props.onChange(item);
+        onChange(item);
       }
     }
   }
@@ -22,7 +20,7 @@ export const WaterItem = (props) => {
         <div className="water-item__size">{ item.size } л</div>
         <div className="water-item__price">{ item.price } ₽</div>
         <div className="water-item__image">
-          <img src={props.item.imgPath} alt=""></img>
+          <img src={item.imgPath} alt=""></img>
         </div>
         <div className="water-item__toggle"></div>
       </div>

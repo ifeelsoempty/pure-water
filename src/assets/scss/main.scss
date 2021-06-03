@@ -10,6 +10,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: $bg-color-1;
   color: $font-color-2;
+  @media screen and (max-width: 600px) {
+    background: $bg-color-2;
+  }
+  min-width: 300px;
 };
 
 .link{
@@ -26,12 +30,28 @@ body {
   }
 }
 
+.text {
+  &-gray{
+    color: $gray-dark-1;
+  }
+  &-bold{
+    font-weight: bold;
+  }
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
 // Set default slider width
-.swiper-container{
+.swiper-container {
   width: 100%;
+  overflow: hidden
 }
 
 @import 'components/input';
+@import 'components/table';
+@import 'components/button';
 @import 'components/order';
 @import 'components/water';
 @import 'components/date-picker';
