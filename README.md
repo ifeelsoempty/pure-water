@@ -1,4 +1,4 @@
-# The diploma project "Pure Water" - Water order app.
+# My diploma project "Pure Water" - Water order app.
 
 ### Link: https://meshcherin-pure-water.herokuapp.com/
 <p align="center">
